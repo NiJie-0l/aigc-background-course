@@ -1211,7 +1211,7 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
     <section class="slide tpl-spec" id="c2-spec" data-tpl="CH02 · 人物图规格">
       <div class="txt">
         <span class="k">02 · 人物图</span>
-        <h2>标准人物图,<span class="accent">两种排法</span></h2>
+        <h2>人物图,<span class="accent">两种排法</span></h2>
         <div class="rows">
           <div class="row row-1"><i>1</i><p><b>做法 A</b>:左 40% 脸部大特写 + 右 60% 人物三视图</p></div>
           <div class="row row-2"><i>2</i><p><b>做法 B</b>:四宫格,上两格 <b>正脸特写 + 侧脸特写</b></p></div>
@@ -1246,35 +1246,35 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
     <section class="slide tpl-prompt" id="c2-prompt" data-tpl="CH02 · 人物图提示词">
       <div class="hd">
         <span class="k">02 · 人物图</span>
-        <h2>人物图,<span class="accent">提示词这样写</span></h2>
+        <h2><span class="accent">人物图</span>的提示词</h2>
       </div>
-      <div class="legend"><i class="g1">主体 · 外观</i><i class="g2">排布 · 构图</i><i class="g3">光线 · 风格</i></div>
+      <div class="legend"><i class="g1">@ 参考图</i><i class="g2">排布 · 构图</i><i class="g3">背景 · 光线</i></div>
       <div class="pair">
         <div class="pane demo">
           <span class="tag">示例 · 照着读一遍</span>
-          <pre><span class="c">9:16 竖版,四宫格排布。
+          <pre><span class="s">@脸部参考图 @服装参考图
+参考第一张的脸部审美、第二张的服装审美,
+原创设计一个人物,不要照抄任何一张。</span>
+<span class="c">9:16 竖版,四宫格排布。
 上左 正脸特写,上右 侧脸特写。
 下左 身体正面,下右 身体背面,两格均不含头部。</span>
-<span class="s">人物:三十岁东亚男性,短发,左眉骨一道旧疤;
-深灰色磨旧夹克,黑色工装裤,军靴。</span>
-<span class="l">纯灰背景,柔和顶光加轮廓光,正面平视,表情平静。
-写实,电影感,胶片颗粒,高清。</span></pre>
+<span class="l">纯灰背景,柔和顶光,正面平视。</span></pre>
         </div>
         <div class="pane tmpl">
           <span class="tag">模板 · 抄走填空</span>
-          <pre>9:16 竖版,四宫格排布。
+          <pre>@<span class="f">[脸部参考图]</span> @<span class="f">[服装参考图]</span>
+参考第一张的脸部审美、第二张的服装审美,
+原创设计一个<span class="f">[年龄][性别]</span>,不要照抄任何一张。
+9:16 竖版,四宫格排布。
 上左 正脸特写,上右 侧脸特写。
 下左 身体正面,下右 身体背面,两格均不含头部。
-人物:<span class="f">[年龄][性别][人种]</span>,<span class="f">[发型]</span>,<span class="f">[面部特征]</span>;
-<span class="f">[上衣]</span>,<span class="f">[下装]</span>,<span class="f">[鞋]</span>。
-纯灰背景,柔和顶光加轮廓光,正面平视,表情<span class="f">[  ]</span>。
-<span class="f">[风格]</span>,<span class="f">[质感]</span>,高清。</pre>
+纯灰背景,柔和顶光,正面平视。</pre>
         </div>
       </div>
       <div class="why3">
-        <div class="w w1"><h3>排布写最前面</h3><p>先说清宫格怎么分,模型才知道这是<b>一张人物设定图</b>,不是四张不相干的图</p></div>
-        <div class="w w2"><h3>外观要「可指认」</h3><p>疤、发型、衣服的颜色材质,模型每次都画得对;<b>「帅气」「有气质」每次理解都不一样</b>,一致性当场就崩</p></div>
-        <div class="w w3"><h3>背景光线锁死</h3><p>这张要给后面每个镜头当参考,背景越干净,<b>@ 进去越不会污染新画面</b></p></div>
+        <div class="w w1"><h3>能 @ 就别用文字描述</h3><p>脸和衣服<b>用图给</b>,比写一百个形容词都准——几乎所有图都能 @ 参考</p></div>
+        <div class="w w2"><h3>说清是参考审美</h3><p>要写明<b>「参考审美,不要照抄」</b>——不然模型会把参考图里的人直接贴过来</p></div>
+        <div class="w w3"><h3>排布和背景写死</h3><p>图管长相,文字管<b>怎么排、什么背景</b>。背景越干净,@ 进去越不会污染新画面</p></div>
       </div>
       <div class="foot"><span class="course">AIGC 底图实战课</span><span class="pageno"></span></div>
     </section>
@@ -1310,7 +1310,7 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
         <span class="k">03 · 场景图</span>
         <h2>什么样的场景图<br><span class="accent">好用</span>?</h2>
         <p class="lead">做一组场景的<b>正反打</b>,把同一个空间交代清楚——这样后面每个镜头的空间才是一致的。</p>
-        <p class="note">场景图<b>不看好不好看,看结构清不清晰</b>——空间关系、物件位置交代明白就够。别为了好看去找奇怪视角。右边这张也不是「完美范例」。</p>
+        <p class="note">场景图<b>不看好不好看,看结构清不清晰</b>——空间关系、物件位置交代明白就够。别为了好看去找奇怪视角。右边只是示例。</p>
       </div>
       <figure class="fig">
         <i class="peek"></i>
@@ -1337,27 +1337,27 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
     <section class="slide tpl-prompt" id="c3-prompt" data-tpl="CH03 · 场景图提示词">
       <div class="hd">
         <span class="k">03 · 场景图</span>
-        <h2>场景图,<span class="accent">提示词这样写</span></h2>
+        <h2><span class="accent">场景图</span>的提示词</h2>
       </div>
-      <div class="legend"><i class="g1">空间 · 物件</i><i class="g2">景别 · 机位</i><i class="g3">光线 · 色调</i></div>
+      <div class="legend"><i class="g1">@ 参考图 · 空间</i><i class="g2">景别 · 机位</i><i class="g3">光线 · 色调</i></div>
       <div class="pair">
         <div class="pane demo">
           <span class="tag">示例 · 照着读一遍</span>
-          <pre><span class="s">废弃水泥厂车间内部,生锈的粗管道沿左墙排列,
+          <pre><span class="s">@氛围参考图 参考这张的光线与色调。
+废弃水泥厂车间,生锈的粗管道沿左墙排列,
 地面积水映出反光,散落的木箱与碎玻璃。</span>
-<span class="c">广角全景,低机位,水平视角。</span>
+<span class="c">广角全景,低机位。</span>
 <span class="l">清晨,侧逆光从右侧破窗斜射进来,空气中有尘埃光束。
-冷灰调,主色不超过三种。
-写实电影感,16:9。</span></pre>
+冷灰调,主色不超过三种,16:9。</span></pre>
         </div>
         <div class="pane tmpl">
           <span class="tag">模板 · 抄走填空</span>
-          <pre><span class="f">[地点]</span>内部,<span class="f">[结构性物件]</span>沿<span class="f">[方位]</span>排列,
-<span class="f">[地面材质与状态]</span>,<span class="f">[散落的细节]</span>。
-<span class="f">[景别]</span>,<span class="f">[机位高度]</span>,<span class="f">[视角]</span>。
-<span class="f">[时间]</span>,<span class="f">[光线方向]</span>从<span class="f">[光源位置]</span>进来,<span class="f">[空气感]</span>。
-<span class="f">[色调]</span>,主色不超过三种。
-<span class="f">[风格]</span>,16:9。</pre>
+          <pre>@<span class="f">[氛围参考图]</span> 参考这张的光线与色调。
+<span class="f">[地点]</span>,<span class="f">[结构性物件]</span>沿<span class="f">[方位]</span>排列,
+<span class="f">[地面状态]</span>,<span class="f">[散落的细节]</span>。
+<span class="f">[景别]</span>,<span class="f">[机位高度]</span>。
+<span class="f">[时间]</span>,<span class="f">[光线方向]</span>从<span class="f">[光源]</span>进来,<span class="f">[空气感]</span>。
+<span class="f">[色调]</span>,主色不超过三种,16:9。</pre>
         </div>
       </div>
       <div class="why3">
@@ -1397,7 +1397,7 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
     <section class="slide tpl-prompt" id="c4-prompt" data-tpl="CH04 · 参考图提示词">
       <div class="hd">
         <span class="k">04 · 参考图</span>
-        <h2>有了参考图,<span class="accent">提示词只写差异</span></h2>
+        <h2>有参考图的时候,<span class="accent">只写差异</span></h2>
       </div>
       <div class="legend"><i class="g1">@ 参考图</i><i class="g2">站位 · 景别 · 机位</i><i class="g3">光线 · 锚点</i></div>
       <div class="pair">
@@ -1488,7 +1488,7 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
     <section class="slide tpl-six" id="x-rework" data-tpl="补充 · 出图不对怎么返工">
       <div class="hd">
         <span class="k">补充 · 实操</span>
-        <h2>出图不对,<span class="accent">怎么返工</span></h2>
+        <h2>出图不对,<span class="accent">怎么改</span></h2>
         <p class="lead">AI 跑图<b>本来就有随机性</b>,一次不对很正常。提示词手搓、还是让 AI 帮你写,都一样——<b>能出对图就行</b>。</p>
       </div>
       <div class="grid6">
