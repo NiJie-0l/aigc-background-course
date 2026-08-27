@@ -966,6 +966,20 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
 .tpl-prompt .howto li.n2 { --hc: var(--rust); }
 .tpl-prompt .howto li.n3 { --hc: var(--ochre); }
 .tpl-prompt .howto b { color: var(--ink); font-weight: 700; }
+.tpl-prompt .pair.split { top: 15.2cqw; bottom: 7.4cqw;
+  grid-template-columns: 1.6fr 1fr; gap: 3.2cqw; align-items: stretch; }
+.tpl-prompt .pair.split .demo { padding: 2.9cqw 2.6cqw; display: flex; align-items: center; }
+.tpl-prompt .pair.split .demo pre { font-size: 1.44cqw; line-height: 1.95; }
+.tpl-prompt .side { display: flex; flex-direction: column; justify-content: space-between; }
+.tpl-prompt .side .w { border-top: .5cqw solid var(--wc, var(--blue)); padding-top: 1.1cqw; }
+.tpl-prompt .side .w h3 { font-family: var(--f-display); font-weight: 400;
+  font-size: 1.95cqw; letter-spacing: .2cqw; }
+.tpl-prompt .side .w p { margin-top: .55cqw; font-size: 1.34cqw; line-height: 1.6; color: var(--ink-soft); }
+.tpl-prompt .side .w p b { color: var(--ink); font-weight: 700; }
+.tpl-prompt .side .w2 { --wc: var(--rust); }
+.tpl-prompt .side .w2 p b { color: var(--rust-text); }
+.tpl-prompt .side .w3 { --wc: var(--ochre); }
+.tpl-prompt .side .w3 p b { color: var(--ochre-text); }
 </style>
 
 <div class="stage">
@@ -1262,44 +1276,6 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
       </figure>
       <div class="foot"><span class="course">AIGC 底图实战课</span><span class="pageno"></span></div>
     </section>
-    <section class="slide tpl-prompt" id="c2-prompt" data-tpl="CH02 · 人物图提示词">
-      <div class="hd">
-        <span class="k">02 · 人物图</span>
-        <h2><span class="accent">人物图</span>的提示词</h2>
-      </div>
-      <div class="legend"><i class="g1">@ 参考图 · 范围</i><i class="g2">构图</i><i class="g3">质感 · 审美</i></div>
-      <div class="pair wide">
-        <div class="pane demo">
-          <span class="tag">一条真实的提示词</span>
-          <pre><span class="l">帮我做一个人物设定图,极致逼真,真人电视剧质感。</span>
-<span class="s">主要人物 @图一
-只参考这个画面中的身材和人物脸部,其余不参考。</span>
-<span class="c">请保持这张图的构图设计:分为四块,上面两块分别是
-正脸特写和侧脸特写,下面两块是人物全身图的正反打,
-通过裁剪的方式不露出头部。</span>
-<span class="s">服装完全重新设计,参考 @图二
-只参考帽子和白色衣服的设计,不参考这个画面中的
-人物身材和画面内容。</span>
-<span class="l">衣服不要太花哨,要「一蓑烟雨下扬州」那种感觉,
-戴一顶帽子。可以再加一点更符合此时的细节。</span></pre>
-        </div>
-        <div class="pane howto">
-          <span class="tag">怎么用</span>
-          <h4>不用看懂,直接抄</h4>
-          <p>整段复制给 AI:<em>「照这个格式,帮我写一个 ___ 的提示词」</em>,让它仿写你自己那条,再按场景微调。</p>
-          <p>这是从 <b>0 分到 30 分</b>,不是一步到 100。用熟了自然知道改哪儿。</p>
-          <div class="sep">
-            <h4>这条为什么好使</h4>
-            <ol>
-              <li class="n1"><b>每张图划清范围</b>——只参考什么、<b>不参考什么</b>都写出来。不划,模型会连人带景一起抄</li>
-              <li class="n2"><b>质感词放最前面</b>——开头定调「极致逼真、真人电视剧质感」,后面全跟着走</li>
-              <li class="n3"><b>审美用意象</b>——「一蓑烟雨下扬州」比「古风、飘逸」管用得多</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-      <div class="foot"><span class="course">AIGC 底图实战课</span><span class="pageno"></span></div>
-    </section>
     <section class="slide tpl-points" id="c2-make" data-tpl="CH02 · 人物图实操">
       <div class="txt">
         <span class="k">02 · 人物图</span>
@@ -1312,6 +1288,33 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
         </div>
       </div>
       <p class="concl">参考是拿来<b>定审美</b>的,不是拿来抄的。</p>
+      <div class="foot"><span class="course">AIGC 底图实战课</span><span class="pageno"></span></div>
+    </section>
+    <section class="slide tpl-prompt" id="c2-prompt" data-tpl="CH02 · 人物图提示词">
+      <div class="hd">
+        <span class="k">02 · 人物图</span>
+        <h2><span class="accent">人物图</span>的提示词</h2>
+      </div>
+      <div class="legend"><i class="g1">@ 参考图 · 范围</i><i class="g2">构图</i><i class="g3">质感 · 审美</i></div>
+      <div class="pair split">
+        <div class="pane demo">
+          <span class="tag">一条真实的提示词</span>
+          <pre><span class="l">帮我做一个人物设定图,极致逼真,真人电视剧质感。</span>
+
+<span class="s">主要人物 @图一——只参考身材和脸部,其余不参考。</span>
+<span class="c">保持这张图的构图:四块,上两块是正脸特写和侧脸特写,
+下两块是全身正反打,裁掉头部。</span>
+
+<span class="s">服装完全重新设计,参考 @图二——只参考帽子和白色衣服,
+不参考人物身材和画面内容。</span>
+<span class="l">衣服不要太花哨,要「一蓑烟雨下扬州」那种感觉,戴一顶帽子。</span></pre>
+        </div>
+        <div class="side">
+          <div class="w w1"><h3>每张图划清范围</h3><p>只参考什么、<b>不参考什么</b>都写出来。不划,模型会连人带景一起抄</p></div>
+          <div class="w w2"><h3>质感词放最前面</h3><p>开头定调「极致逼真、真人电视剧质感」,<b>后面全跟着走</b></p></div>
+          <div class="w w3"><h3>审美用意象</h3><p>「一蓑烟雨下扬州」比<b>「古风、飘逸」</b>管用得多</p></div>
+        </div>
+      </div>
       <div class="foot"><span class="course">AIGC 底图实战课</span><span class="pageno"></span></div>
     </section>
 
