@@ -968,12 +968,14 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
 .tpl-prompt .howto b { color: var(--ink); font-weight: 700; }
 .tpl-prompt .pair.split { top: 15.2cqw; bottom: 7.4cqw;
   grid-template-columns: 1.6fr 1fr; gap: 3.2cqw; align-items: stretch; }
-.tpl-prompt .pair.split .demo { padding: 2.9cqw 2.6cqw; display: flex; align-items: center; }
-.tpl-prompt .pair.split .demo pre { font-size: 1.44cqw; line-height: 1.95; }
-.tpl-prompt .side { display: flex; flex-direction: column; justify-content: space-between; }
-.tpl-prompt .side .w { border-top: .5cqw solid var(--wc, var(--blue)); padding-top: 1.1cqw; }
+.tpl-prompt .pair.split .demo { padding: 3.2cqw 3cqw; display: flex; align-items: center; }
+.tpl-prompt .pair.split .demo pre { font-size: 1.44cqw; line-height: 2.05; }
+.tpl-prompt .side { display: flex; flex-direction: column; gap: 1.6cqw; }
+.tpl-prompt .side .w { flex: 1; display: flex; flex-direction: column; justify-content: center;
+  background: var(--paper-hi); border: .14cqw solid rgba(28,25,19,.32);
+  border-top: .6cqw solid var(--wc, var(--blue)); padding: 1.3cqw 1.6cqw; }
 .tpl-prompt .side .w h3 { font-family: var(--f-display); font-weight: 400;
-  font-size: 1.95cqw; letter-spacing: .2cqw; }
+  font-size: 1.9cqw; letter-spacing: .2cqw; color: var(--ink); }
 .tpl-prompt .side .w p { margin-top: .55cqw; font-size: 1.34cqw; line-height: 1.6; color: var(--ink-soft); }
 .tpl-prompt .side .w p b { color: var(--ink); font-weight: 700; }
 .tpl-prompt .side .w2 { --wc: var(--rust); }
