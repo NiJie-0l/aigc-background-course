@@ -957,6 +957,12 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
   border-left: .5cqw solid var(--cc, var(--blue)); }
 .tpl-points .chips .cp2 { --cc: var(--rust); }
 .tpl-points .chips .cp3 { --cc: var(--ochre); }
+.tpl-prompt .demo .copy { position: absolute; right: 1.4cqw; top: 1.2cqw; z-index: 4;
+  font-family: var(--f-label); font-weight: 700; font-size: 1cqw; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--ochre); background: transparent;
+  border: .14cqw solid rgba(228,200,120,.5); padding: .5cqw 1cqw; cursor: pointer; }
+.tpl-prompt .demo .copy:hover { background: rgba(228,200,120,.14); }
+.tpl-prompt .demo .copy.done { color: var(--paper); border-color: var(--paper); }
 </style>
 
 <div class="stage">
@@ -1129,24 +1135,23 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
         <span class="k">01 · 人物图</span>
         <h2><span class="accent">人物图</span>的提示词</h2>
       </div>
-      <div class="legend"><i class="g1">@ 参考图 · 范围</i><i class="g2">构图</i><i class="g3">质感 · 审美</i></div>
+      <div class="legend"><i class="g1">一致性</i><i class="g2">构图 · 分格</i><i class="g3">质感</i></div>
       <div class="pair split">
         <div class="pane demo">
           <span class="tag">一条真实的提示词</span>
-          <pre><span class="l">帮我做一个人物设定图,极致逼真,真人电视剧质感。</span>
+          <pre><span class="s">我们要做一个人物设定图,要求和参考图片中的人物一模一样。</span>
+<span class="c">上面是人物的正脸和侧脸大特写,下面是人物身材的正反打,
+要通过截图把身材正反打里面的头部截掉。</span>
 
-<span class="s">主要人物 @图一——只参考身材和脸部,其余不参考。</span>
-<span class="c">保持这张图的构图:四块,上两块是正脸特写和侧脸特写,
-下两块是全身正反打,裁掉头部。</span>
-
-<span class="s">服装完全重新设计,参考 @图二——只参考帽子和白色衣服,
-不参考人物身材和画面内容。</span>
-<span class="l">衣服不要太花哨,要「一蓑烟雨下扬州」那种感觉,戴一顶帽子。</span></pre>
+<span class="l">保持图片中的 CG 质感以及 3D 人物质感,不要做成二次元效果,
+一定要做 CG 质感。</span>
+<span class="s">人脸的一致性一定要保持得非常清楚。</span>
+<span class="c">现在要对整个画面进行四宫格切分。</span></pre>
         </div>
         <div class="side">
-          <div class="w w1"><h3>每张图划清范围</h3><p>只参考什么、<b>不参考什么</b>都写出来。不划,模型会连人带景一起抄</p></div>
-          <div class="w w2"><h3>质感词放最前面</h3><p>开头定调「极致逼真、真人电视剧质感」,<b>后面全跟着走</b></p></div>
-          <div class="w w3"><h3>审美用意象</h3><p>「一蓑烟雨下扬州」比<b>「古风、飘逸」</b>管用得多</p></div>
+          <div class="w w1"><h3>要锁的直接说死</h3><p>「<b>和参考图一模一样</b>」「人脸一致性保持得非常清楚」——不给模型自由发挥的余地</p></div>
+          <div class="w w2"><h3>排除项要配正面词</h3><p>「不要二次元」后面立刻跟「<b>一定要做 CG 质感</b>」。只说不要,模型不知道该要什么</p></div>
+          <div class="w w3"><h3>版式逐格交代</h3><p>上面什么、下面什么、<b>头部截掉</b>、四宫格切分——一句都不省</p></div>
         </div>
       </div>
       <div class="foot"><span class="course">AIGC 底图实战课</span><span class="pageno"></span></div>
@@ -1506,5 +1511,32 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
 })();
 </script>
 
+<script>
+(function () {
+  document.querySelectorAll('.tpl-prompt .demo').forEach(function (pane) {
+    var pre = pane.querySelector('pre');
+    if (!pre) return;
+    var btn = document.createElement('button');
+    btn.className = 'copy'; btn.type = 'button'; btn.textContent = '复制';
+    function done() {
+      btn.textContent = '已复制'; btn.classList.add('done');
+      setTimeout(function () { btn.textContent = '复制'; btn.classList.remove('done'); }, 1500);
+    }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(pre);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      try { document.execCommand('copy'); done(); } catch (e) { btn.textContent = '请手动选中复制'; }
+    }
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var txt = pre.innerText;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(done, fallback);
+      } else { fallback(); }
+    });
+    pane.appendChild(btn);
+  });
+})();
+</script>
 </body>
 </html>
