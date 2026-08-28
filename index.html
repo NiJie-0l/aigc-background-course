@@ -875,6 +875,7 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
 .tpl-steps .hint { margin-top: 1cqw; font-size: 1.5cqw; letter-spacing: .06em; color: var(--ink-soft); }
 .tpl-points .txt { width: 62cqw; }
 .tpl-points .concl { right: 20cqw; bottom: 8cqw; }
+#c3-free .concl { bottom: 14cqw; }
 
 /* T19 六宫格判据页(补充 · 一张好图的标准) */
 .tpl-six .hd { position: absolute; left: 5cqw; right: 5cqw; top: 4.4cqw; }
@@ -982,6 +983,15 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
 .tpl-prompt .side .w2 p b { color: var(--rust-text); }
 .tpl-prompt .side .w3 { --wc: var(--ochre); }
 .tpl-prompt .side .w3 p b { color: var(--ochre-text); }
+.tpl-points .chips { position: absolute; left: 5cqw; right: 5cqw; bottom: 8.5cqw;
+  display: flex; flex-wrap: wrap; gap: .9cqw; align-items: center; }
+.tpl-points .chips .lbl { font-family: var(--f-label); font-weight: 700; font-size: 1.05cqw;
+  letter-spacing: .24em; text-transform: uppercase; color: var(--ink-soft); margin-right: .5cqw; }
+.tpl-points .chips .cp { padding: .5cqw 1.1cqw; font-size: 1.42cqw; font-weight: 500;
+  background: var(--paper-hi); border: .14cqw solid rgba(28,25,19,.35);
+  border-left: .5cqw solid var(--cc, var(--blue)); }
+.tpl-points .chips .cp2 { --cc: var(--rust); }
+.tpl-points .chips .cp3 { --cc: var(--ochre); }
 </style>
 
 <div class="stage">
@@ -1224,42 +1234,29 @@ section.slide.tpl-section.sec-ochre { background: var(--ochre); color: var(--ink
         <div class="rows">
           <div class="row row-1"><i>1</i><p>很多时候只要 <b>@ 人物图 + 文字描述场景</b> 就够了——大多数场景其实是这么出来的,不少大神也这么干</p></div>
           <div class="row row-2"><i>2</i><p>想交代全局,就做一张 <b>90 度俯瞰图</b>,一样管用——大场景尤其好使</p></div>
-          <div class="row row-3"><i>3</i><p>别把场景<b>锁太死</b>——限制给太多,反而容易出 bug</p></div>
+          
         </div>
       </div>
-      <p class="concl">人物图尽量要有;<b>场景图玩法多,松一点更好使</b>。</p>
+      <p class="concl">人物图尽量要有;<b>场景图大多是融出来的</b>。</p>
       <div class="foot"><span class="course">AIGC 底图实战课</span><span class="pageno"></span></div>
     </section>
-    <section class="slide tpl-prompt" id="c3-prompt" data-tpl="CH02 · 场景图提示词">
-      <div class="hd">
+    <section class="slide tpl-points" id="c3-make" data-tpl="CH02 · 场景图怎么合成">
+      <div class="txt">
         <span class="k">02 · 场景图</span>
-        <h2><span class="accent">场景图</span>的提示词</h2>
-      </div>
-      <div class="legend"><i class="g1">@ 参考图 · 空间</i><i class="g2">景别 · 机位</i><i class="g3">光线 · 色调</i></div>
-      <div class="pair">
-        <div class="pane demo">
-          <span class="tag">示例 · 照着读一遍</span>
-          <pre><span class="s">@氛围参考图 参考这张的光线与色调。
-废弃水泥厂车间,生锈的粗管道沿左墙排列,
-地面积水映出反光,散落的木箱与碎玻璃。</span>
-<span class="c">广角全景,低机位。</span>
-<span class="l">清晨,侧逆光从右侧破窗斜射进来,空气中有尘埃光束。
-冷灰调,主色不超过三种,16:9。</span></pre>
-        </div>
-        <div class="pane tmpl">
-          <span class="tag">模板 · 抄走填空</span>
-          <pre>@<span class="f">[氛围参考图]</span> 参考这张的光线与色调。
-<span class="f">[地点]</span>,<span class="f">[结构性物件]</span>沿<span class="f">[方位]</span>排列,
-<span class="f">[地面状态]</span>,<span class="f">[散落的细节]</span>。
-<span class="f">[景别]</span>,<span class="f">[机位高度]</span>。
-<span class="f">[时间]</span>,<span class="f">[光线方向]</span>从<span class="f">[光源]</span>进来,<span class="f">[空气感]</span>。
-<span class="f">[色调]</span>,主色不超过三种,16:9。</pre>
+        <h2>场景图,<span class="accent">主要靠合成</span></h2>
+        <p class="kicker-line">拿几张参考融成一张——这就是场景图的实操。</p>
+        <div class="rows">
+          <div class="row row-1"><i>1</i><p>要什么就找什么参考:想要一张<b>俯瞰图</b>,就把几个分镜的参考放一起,<b>对照着融</b></p></div>
+          <div class="row row-2"><i>2</i><p>融的时候加<b>质感词</b>定调——极致逼真,或者直接对标某部片子、某种画风;剩下加点<b>简单描述</b>就够</p></div>
+          <div class="row row-3"><i>3</i><p><b>景别、景深这些别自己写</b>——交给 AI 出就行</p></div>
         </div>
       </div>
-      <div class="why3">
-        <div class="w w1"><h3>先定结构,再填细节</h3><p>墙、地、光从哪进来——这三样决定了它是不是<b>同一个空间</b>;木箱碎玻璃变了没关系</p></div>
-        <div class="w w2"><h3>光线一定要写死</h3><p>同一间屋子换个光就像换了个地方。<b>时间 + 光线方向</b>才是场景一致性真正的抓手</p></div>
-        <div class="w w3"><h3>别锁太死</h3><p>写到「这是哪儿、光怎么打」就够。家具逐个定位、物件逐个规定,<b>限制越多越容易出 bug</b></p></div>
+      <div class="chips">
+        <span class="lbl">质感词举例</span>
+        <span class="cp">极致逼真</span>
+        <span class="cp cp2">对标《清平乐》的画风</span>
+        <span class="cp cp3">苏联上世纪画风</span>
+        <span class="cp">经典哑光蓝画风</span>
       </div>
       <div class="foot"><span class="course">AIGC 底图实战课</span><span class="pageno"></span></div>
     </section>
